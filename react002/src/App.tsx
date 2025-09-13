@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import CourseForm from './component/CourseForm';
 import CourseList from './component/CourseList';
