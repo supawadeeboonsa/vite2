@@ -48,79 +48,78 @@ function CourseForm() {
   };
 
   return (
-      <div className="flex flex-col justify-center items-center w-screen h-screen bg-gray-50">
-        <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-md flex flex-col gap-4">
-          <h2 className="text-2xl font-bold text-center">เพิ่มรายวิชา</h2>
+    <div className="flex justify-center items-center min-h-screen bg-gray-50">
+      <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-md flex flex-col gap-4">
+        <h2 className="text-2xl font-bold text-center">เพิ่มรายวิชา</h2>
 
-          {/* เลือกวิชา */}
-          <select
-            value={form.code}
-            onChange={(e) => handleCodeChange(e.target.value)}
-            className="border rounded p-2"
-          >
-            <option value="">-- เลือกวิชา --</option>
-            {AVAILABLE_COURSES.map((c) => (
-              <option key={c.code} value={c.code}>
-                {c.code} - {c.nameTh}
-              </option>
-            ))}
-          </select>
+        {/* เลือกวิชา */}
+        <select
+          value={form.code}
+          onChange={(e) => handleCodeChange(e.target.value)}
+          className="border rounded p-2"
+        >
+          <option value="">-- เลือกวิชา --</option>
+          {AVAILABLE_COURSES.map((c) => (
+            <option key={c.code} value={c.code}>
+              {c.code} - {c.nameTh}
+            </option>
+          ))}
+        </select>
 
-          {/* ชื่อวิชา */}
-          <input
-            placeholder="ชื่อวิชา (ไทย)"
-            value={form.nameTh}
-            readOnly
-            className="border rounded p-2 bg-gray-100"
-          />
-          <input
-            placeholder="ชื่อวิชา (Eng)"
-            value={form.nameEn}
-            readOnly
-            className="border rounded p-2 bg-gray-100"
-          />
+        {/* ชื่อวิชา */}
+        <input
+          placeholder="ชื่อวิชา (ไทย)"
+          value={form.nameTh}
+          readOnly
+          className="border rounded p-2 bg-gray-100"
+        />
+        <input
+          placeholder="ชื่อวิชา (Eng)"
+          value={form.nameEn}
+          readOnly
+          className="border rounded p-2 bg-gray-100"
+        />
 
-          {/* ฟิลด์เพิ่มเติม */}
-          <input
-            type="number"
-            placeholder="หน่วยกิต"
-            value={form.credit}
-            onChange={(e) => setForm({ ...form, credit: +e.target.value })}
-            className="border rounded p-2"
-          />
-          <input
-            placeholder="อาจารย์ผู้สอน"
-            value={form.teacher}
-            onChange={(e) => setForm({ ...form, teacher: e.target.value })}
-            className="border rounded p-2"
-          />
-          <select
-            value={form.grade}
-            onChange={(e) => setForm({ ...form, grade: e.target.value })}
-            className="border rounded p-2"
-          >
-            <option>A</option>
-            <option>B+</option>
-            <option>B</option>
-            <option>C+</option>
-            <option>C</option>
-            <option>D+</option>
-            <option>D</option>
-            <option>F</option>
-          </select>
+        {/* ฟิลด์เพิ่มเติม */}
+        <input
+          type="number"
+          placeholder="หน่วยกิต"
+          value={form.credit}
+          onChange={(e) => setForm({ ...form, credit: +e.target.value })}
+          className="border rounded p-2"
+        />
+        <input
+          placeholder="อาจารย์ผู้สอน"
+          value={form.teacher}
+          onChange={(e) => setForm({ ...form, teacher: e.target.value })}
+          className="border rounded p-2"
+        />
+        <select
+          value={form.grade}
+          onChange={(e) => setForm({ ...form, grade: e.target.value })}
+          className="border rounded p-2"
+        >
+          <option>A</option>
+          <option>B+</option>
+          <option>B</option>
+          <option>C+</option>
+          <option>C</option>
+          <option>D+</option>
+          <option>D</option>
+          <option>F</option>
+        </select>
 
-          {/* ปุ่มเพิ่มวิชา */}
-          <button
-            onClick={handleAdd}
-            disabled={!form.code}
-            className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 disabled:opacity-50"
-          >
-            เพิ่มวิชา
-          </button>
-        </div>
+        {/* ปุ่มเพิ่มวิชา */}
+        <button
+          onClick={handleAdd}
+          disabled={!form.code}
+          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 disabled:opacity-50"
+        >
+          เพิ่มวิชา
+        </button>
       </div>
-    );
-
+    </div>
+  );
 }
 
 export default CourseForm;
