@@ -1,6 +1,7 @@
 import './App.css';
-import CourseForm from './component/CourseForm';
-import CourseList from './component/CourseList';
+import CourseForm from './component/CourseForm.tsx';
+import CourseList from './component/CourseList.tsx';
+
 
 function App() {
   return (
