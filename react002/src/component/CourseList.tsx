@@ -1,7 +1,7 @@
 import useCourseStore from "../store/CourseStore";
 import DropButton from "./DropButton";
 
-function CourseList() {
+export default function CourseList() {
   const courses = useCourseStore((s) => s.courses);
 
   if (courses.length === 0)
@@ -46,4 +46,4 @@ function CourseList() {
   );
 }
 
-export default CourseList;
+

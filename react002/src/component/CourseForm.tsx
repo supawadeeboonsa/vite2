@@ -10,7 +10,7 @@ const AVAILABLE_COURSES = [
   { code: "10700313", nameTh: "ภาษาอังกฤษเชิงวิทยาศาสตร์และนวัตกรรม", nameEng: "English for Science and Innovation" },
 ];
 
-function CourseForm() {
+export default function CourseForm() {
   const addCourse = useCourseStore((s) => s.addCourse);
 
   const [form, setForm] = useState({
@@ -122,4 +122,3 @@ function CourseForm() {
   );
 }
 
-export default CourseForm;
